@@ -1,0 +1,35 @@
+.productsContainer {
+    width: 70vw;
+    padding: 2%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    .searchBar {
+        width: 20%;
+        margin-bottom: 5%;
+
+        input {
+            display: block;
+            width: 93%;
+            height: 2.5vmax;
+            border: 2px solid rgb(9, 55, 108);
+            border-radius: 5px;
+            margin-bottom: 5%;
+            padding: 0.5% 5%;
+            font-size: 1.2vmax;
+            text-align: center;
+        }
+
+    }
+
+    .prodList{
+        width: 96%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        row-gap: 2vw;
+        column-gap: 0.8vw;
+    }
+}
