@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+//importing methods from firebase authenticaton for sign up, sign in , sign out. 
 import {
     signOut, createUserWithEmailAndPassword,
     signInWithEmailAndPassword, updateProfile
@@ -14,6 +15,7 @@ export const useAuthValue = () => {
     return value;
 }
 
+//custome auth context created here.
 const CustomeAuthContext = ({ children }) => {
 
     const [email, setEmail] = useState('');
@@ -21,15 +23,17 @@ const CustomeAuthContext = ({ children }) => {
     const [name, setName] = useState('');
     const [error, setError] = useState(null);
     const [authenticated, setAuthenticated] = useState(false);
+    const [userId, setUserId] = useState(null);
 
     const navigate = useNavigate();
 
-
+    //function to register new user.
     const handleSignUp = async (e) => {
         e.preventDefault();
         try {
             await createUserWithEmailAndPassword(auth, email, password)
                 .then((res) => {
+                    setUserId(res.user.uid);
                     updateProfile(res.user, {
                         displayName: name
                     });
@@ -44,10 +48,12 @@ const CustomeAuthContext = ({ children }) => {
         }
     };
 
+    //function for existing user sign in.
     const handleSignIn = async (e) => {
         e.preventDefault();
         try {
-            await signInWithEmailAndPassword(auth, email, password);
+            await signInWithEmailAndPassword(auth, email, password)
+            .then(res => setUserId(res.user.uid));
             setEmail('');
             setPassword('');
             setAuthenticated(true);
@@ -57,10 +63,11 @@ const CustomeAuthContext = ({ children }) => {
         }
     };
 
+    //function for user to sign out.
     const handleSignOut = async () => {
         signOut(auth).then(() => {
             setAuthenticated(false);
-            console.log('Sign out successfull');
+            setUserId(null);
             setError('');
             navigate('/');
         }).catch((error) => {
@@ -69,7 +76,7 @@ const CustomeAuthContext = ({ children }) => {
     }
 
     return (
-        <authContext.Provider value={{ name, email, password, error, setName, setEmail, setPassword, handleSignUp, handleSignIn, handleSignOut, authenticated }}>
+        <authContext.Provider value={{ name, email, password, error, setName, setEmail, setPassword, handleSignUp, handleSignIn, handleSignOut, authenticated, userId }}>
             {children}
         </authContext.Provider>
     )

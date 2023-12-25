@@ -6,19 +6,26 @@ import Loader from '../../../Components/loader/Loader';
 
 const Product = () => {
 
-  const {data, setData} = useProductValue();
+  const { data, handleSearchBar, filteredData, searchTerm, setSearchTerm } = useProductValue();
 
   return (
     <div className={styles.productsContainer}>
       <div className={styles.searchBar}>
-        <input type='text' placeholder='Search item by name' />
+        <input type='text' placeholder='Search Item By Name' onChange={(e) => { setSearchTerm(e.target.value); handleSearchBar() }} />
       </div>
       <div className={styles.prodList}>
-        {data.map((prod, i) => {
-          return(
-            <ProductCard key={i} prod= {prod} />
-          )
-        })}
+        {filteredData.length === 0 || searchTerm === ""?
+          data.map((prod, i) => {
+            return (
+              <ProductCard key={i} prod={prod} />
+            )
+          }) :
+          filteredData.map((prod, i) => {
+            return (
+              <ProductCard key={i} prod={prod} />
+            )
+          })
+        }
       </div>
     </div>
   )

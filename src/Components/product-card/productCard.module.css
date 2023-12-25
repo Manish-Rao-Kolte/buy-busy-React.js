@@ -61,6 +61,7 @@
         align-items: center;
         text-align: center;
         font-size: 1.4vmax;
+        align-self: flex-end;
 
         img {
             height: 1.5vmax;
@@ -70,12 +71,18 @@
 }
 
 .cardBtn {
-    width: 100%;
-    padding: 5% 10%;
-    background-color: rgb(120, 120, 225);
+    width: 95%;
+    max-width: 95%;
+    padding: 3% 10%;
+    background-color: rgb(100, 100, 195);
     color: white;
     margin-bottom: 0px;
-    border-color: rgb(120, 120, 225);
     border-radius: 8px;
     font-size: 1.4vmax;
+    border: none;
+}
+
+.cardBtn:hover, .btnContainer img:hover{
+    cursor: pointer;
+    scale: 0.9;
 }

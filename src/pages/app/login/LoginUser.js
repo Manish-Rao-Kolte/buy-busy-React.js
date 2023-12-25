@@ -4,6 +4,7 @@ import { useAuthValue } from '../../../context/authContext';
 
 const LoginUser = () => {
     const { handleSignIn, error, setEmail, setPassword } = useAuthValue();
+
     return (
         <>
             <form className={styles.formContainer} onSubmit={(e) => handleSignIn(e)}>

@@ -1,0 +1,17 @@
+.cartContainer {
+    width: 70vw;
+    padding: 2%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    .cartList{
+        width: 96%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        row-gap: 2vw;
+        column-gap: 0.8vw;
+    }
+}
