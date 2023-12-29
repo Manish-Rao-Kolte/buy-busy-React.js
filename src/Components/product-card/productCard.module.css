@@ -82,6 +82,7 @@
     border: none;
 }
 
+
 .cardBtn:hover, .btnContainer img:hover{
     cursor: pointer;
     scale: 0.9;

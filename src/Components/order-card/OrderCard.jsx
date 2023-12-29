@@ -1,0 +1,50 @@
+import React from "react";
+import styles from "./orderCard.module.css";
+import { useProductValue } from "../../context/productContext";
+
+function OrderCard(props) {
+  const { order, date, total } = props;
+
+  return (
+    <div className={styles.oderCardContainer}>
+      <div className="orderCardHeader">
+        {" "}
+        <h3>Orderd on :-&nbsp; {date}</h3>{" "}
+      </div>
+      <table className={styles.orderTable}>
+        <thead>
+          <tr>
+            <th className={styles.title}>
+              <p>Item Name</p>
+            </th>
+            <th className={styles.fixedWidth}>Price</th>
+            <th className={styles.fixedWidth}>Quantity</th>
+            <th className={styles.fixedWidth}>Total Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          {order.map((item) => {
+            return (
+              <tr>
+                <td className={styles.title}>
+                  <p>{item.prod.title}</p>
+                </td>
+                <td>&#8377; {item.prod.price}</td>
+                <td>{item.qty}</td>
+                <td>&#8377; {item.qty * item.prod.price}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colSpan={3}>Grand Total</td>
+            <td>&#8377; {total}</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  );
+}
+
+export default OrderCard;

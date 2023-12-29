@@ -10,21 +10,33 @@
     padding: 1.5% 3.5%;
     margin-top: 0.7%;
     margin-bottom: 2.5%;
+
+    .navLogoContainer{
+        display: flex;
+        width: 25%;
+        color: rgb(81, 35, 124);
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .navLogo{
     margin-left: 3%;
     text-decoration: none;
     color: rgb(81, 35, 124);
+    padding: 2% 1%;
+    border-radius: 10px;    
 }
 
 .navLogo:hover{
     cursor: pointer;
-    scale: 1.1;
+    background-color: rgb(134, 92, 174);
+    color: white;
+    font-weight: 700;
 }
 
 .navItemContainer{
-    width: 50%;
+    width: 45%;
     display: flex;
     flex-direction: row-reverse;
 }
@@ -34,9 +46,11 @@
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
-    margin: 0px 3%;
+    margin: 0px 2%;
     color: rgb(81, 35, 124);
     text-decoration: none;
+    padding: 1%;
+    border-radius: 10px;
 }
 
 .navIcon{
@@ -47,5 +61,9 @@
 
 .navItem:hover{
     cursor: pointer;
-    scale: 0.9;
+    background-color: rgb(134, 92, 174);
+    color: white;
+    font-weight: 700;
+    padding: 1%;
+    border-radius: 10px;
 }

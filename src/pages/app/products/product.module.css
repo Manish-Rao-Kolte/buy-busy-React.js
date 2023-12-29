@@ -1,3 +1,38 @@
+
+.filterContainer{
+    top: 40vh;
+    left: 0.5vw;
+    width: 13vw;
+    background-color: rgb(242, 242, 255);
+    position: absolute;
+    padding: 1.5% 1%;
+    border-radius: 8px;
+    font-family: 'Times New Roman', Times, serif;
+
+    input{
+        width: 92%;
+    }
+
+    .inputContainer{
+        display: flex;
+        flex-direction: column;
+        gap: 0.8vmax;
+
+        div{
+            display: flex;
+            text-align: left; 
+            font-size: 1.2vmax; 
+            align-items: center;
+            
+            input{
+                margin-right: 0.5vmax;
+                width: 1.2vmax;
+                height: 1.2vmax;
+            }
+        }
+    }
+}
+
 .productsContainer {
     width: 70vw;
     padding: 2%;
