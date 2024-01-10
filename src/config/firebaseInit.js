@@ -6,8 +6,8 @@ import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore";
 import { getAuth } from "@firebase/auth";
 
-const apiKey = process.env.FIREBASE_API_KEY;
-const appId = process.env.FIREBASE_APP_ID;
+const apiKey = process.env.REACT_APP_FIREBASE_API_KEY;
+const appId = process.env.REACT_APP_FIREBASE_APP_ID;
 
 const firebaseConfig = {
   apiKey: apiKey,
