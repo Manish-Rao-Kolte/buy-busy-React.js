@@ -6,13 +6,16 @@ import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore";
 import { getAuth } from "@firebase/auth";
 
+const apiKey = process.env.FIREBASE_API_KEY;
+const appId = process.env.FIREBASE_APP_ID;
+
 const firebaseConfig = {
-  apiKey: "AIzaSyBs9rbt3bHVZHVQ4xBp5KBXwe79GiqS868",
+  apiKey: apiKey,
   authDomain: "busy-buy-app-8b870.firebaseapp.com",
   projectId: "busy-buy-app-8b870",
   storageBucket: "busy-buy-app-8b870.appspot.com",
   messagingSenderId: "147508862667",
-  appId: "1:147508862667:web:d37536d82cd30259f0854e",
+  appId: appId,
   measurementId: "G-0BZXQM5EBC",
 };
 
