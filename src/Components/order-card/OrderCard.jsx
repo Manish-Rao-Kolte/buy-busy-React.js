@@ -31,7 +31,7 @@ function OrderCard(props) {
                 </td>
                 <td>&#8377; {item.prod.price}</td>
                 <td>{item.qty}</td>
-                <td>&#8377; {item.qty * item.prod.price}</td>
+                <td>&#8377; {(item.qty * item.prod.price).toFixed(2)}</td>
               </tr>
             );
           })}
@@ -39,7 +39,7 @@ function OrderCard(props) {
         <tfoot>
           <tr>
             <td colSpan={3}>Grand Total</td>
-            <td>&#8377; {total}</td>
+            <td>&#8377; {total.toFixed(2)}</td>
           </tr>
         </tfoot>
       </table>

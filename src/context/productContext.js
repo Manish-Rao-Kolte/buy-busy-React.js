@@ -37,7 +37,7 @@ const CustomeProductContext = ({ children }) => {
   //checking current user
   const user = auth.currentUser;
 
-  //handling search function in search bar
+  //handling search function in search bar and in checkbox filter
   const handleSearchFilter = async (e, checkbox) => {
     const products = data;
     if (checkbox) {
@@ -224,7 +224,7 @@ const CustomeProductContext = ({ children }) => {
 
   //this is implemented to set cart data when user is changed, so new user cannot see last user's cart details.
   useEffect(() => {
-    !user && setLoading(true);
+    // !user && setLoading(true);
     const uid = user && user.uid;
     const ref = user && collection(db, "usersCarts", uid, "myCart");
     user &&
